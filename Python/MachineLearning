@@ -1,0 +1,16 @@
+import numpy as np
+
+
+class neuralNetwork():
+    num_examples = 4  # training set size
+    nn_input_dim = 4  # input layer dimensionality
+    nn_output_dim = 2  # output layer dimensionality
+
+    def __int__(self):
+        pass
+
+    def train(self):
+        pass
+
+    def test(self):
+        pass

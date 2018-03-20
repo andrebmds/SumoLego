@@ -1,0 +1,35 @@
+from time import sleep
+
+
+# for connection of python to nxt is used nxt-python https://github.com/Eelviny/nxt-python
+
+
+def countTime():
+    pass
+
+
+def input():
+    pass
+
+
+def machineLearning():
+    pass
+
+
+def output():
+    pass
+
+
+if __name__ == "__main__":
+    print('Sumo Lego NXT')
+    # Set Config
+    print('Count Time for star fight')
+    # Count time for the match
+    print('Read Sensor')
+    # Read Sensor
+    print('Machine Learning')
+    # Machine Learning
+    print('Output For Motors')
+    # Output
+    print('Closing condition for match')
+    # End of the match
