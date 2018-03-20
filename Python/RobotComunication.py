@@ -5,16 +5,16 @@ from nxt.sensor import *
 
 class ntx_robot():
     # INPUT
-    ultrasonic = PORT_1
-    light = PORT_2
-    color = PORT_3
-    gyroscope = PORT_4
+    portUltrasonic = PORT_1
+    portLight = PORT_2
+    portColor = PORT_3
+    portGyroscope = PORT_4
     # OUTPUT
-    leftMotor = PORT_A
-    rightMotor = PORT_B
+    portMotorL = PORT_A
+    portMotorR = PORT_B
 
     def __int__(self):
-        pass
+        self.b = nxt.locator.find_one_brick()
 
     def input_sensor(self):
         # Ultrasonic
@@ -22,10 +22,19 @@ class ntx_robot():
         # Color sensor
         # Gyroscope
         # Port used for sensor
-        pass
+        valueUltrasonic = Ultrasonic(self.b, self.portUltrasonic).get_sample
+        valueLight = Light(self.b, self.portLight).get_sample
+        valueColor = Color20(self.b, self.portColor).get_sample
+        valueGyroscope = HTGyro(self.b, self.portGyroscope).get_sample
 
-    def output_motor(self, left, right):
+        return [valueUltrasonic, valueLight, valueColor, valueGyroscope]
+
+    def output_motor(self, speedL, speedR):
         # Right Motor
         # Left Motor
-        pass
-# class motor():
+        motor_L = Motor(self.b, self.portMotorL)
+        motor_R = Motor(self.b, self.portMotorR)
+
+        motor_L.turn(speedL, 360)
+        motor_R.turn(speedR, 360)
+        return
